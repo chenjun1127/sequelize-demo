@@ -40,11 +40,11 @@ router.get('/', async (ctx) => {
             var course1 = await Course.create({ courseName: '英语' });
             var course2 = await Course.create({ courseName: '数学' });
             var course3 = await Course.create({ courseName: '语文' });
-            await teacher1.addCourses([course1, course2], { type: 0 });
-            await teacher2.addCourses([course3], { type: 0 });
-            await teacher3.addCourses([course1, course3], { type: 0 });
-            await course1.addTeachers([teacher1, teacher2], { type: 1 });
-            await course2.addTeachers([teacher2, teacher3], { type: 1 });
+            await teacher1.addCourses([course1, course2]);
+            await teacher2.addCourses([course3]);
+            await teacher3.addCourses([course1, course3]);
+            await course1.addTeachers([teacher1, teacher2]);
+            await course2.addTeachers([teacher3]);
             // 下面为改
             // var course4 = await Course.create({ courseName: '体育' });
             // var course5 = await Course.create({ courseName: '物理' });
